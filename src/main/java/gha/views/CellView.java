@@ -10,7 +10,7 @@ public class CellView extends JPanel{
         this.setBackground(Color.lightGray);
 
         for (int i = 0; i < 9; i++) {
-            JTextField textField = new JTextField("" + i);
+            JTextField textField = new JTextField();
             textField.setHorizontalAlignment(JTextField.CENTER);
             textField.setBackground(Color.white);
             textField.setBorder(new LineBorder(Color.lightGray));

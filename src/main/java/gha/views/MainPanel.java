@@ -1,5 +1,4 @@
 package main.java.gha.views;
-
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
@@ -12,7 +11,6 @@ public class MainPanel extends JPanel {
     private JButton clearAllButton = new JButton("Clear All");
     private Timer timer;
     private JLabel timerLabel;
-    private int seconds;
 
     public MainPanel() {
         this.setBackground(Color.pink);
@@ -81,35 +79,6 @@ public class MainPanel extends JPanel {
         setButtonStyle(restartButton);
         setButtonStyle(clearAllButton);
 
-        timer = new Timer(1000, e -> {
-            seconds++;
-            updateTimerLabel();
-        });
-
-        veryEasyButton.addActionListener(e -> {
-            startTimer();
-        });
-
-        easyButton.addActionListener(e -> {
-            startTimer();
-        });
-
-        normalButton.addActionListener(e -> {
-            startTimer();
-        });
-
-        hardButton.addActionListener(e -> {
-            startTimer();
-        });
-
-        restartButton.addActionListener(e -> {
-            restartTimer();
-        });
-
-        clearAllButton.addActionListener(e -> {
-            stopTimer();
-            resetTimer();
-        });
     }
     private void setButtonStyle(JButton button) {
         button.setBackground(new Color(187,133,171));
@@ -117,29 +86,41 @@ public class MainPanel extends JPanel {
         button.setBorder(new LineBorder(Color.pink));
         button.setFocusPainted(false);
     }
-    private void startTimer() {
-        timer.start();
+
+    public JButton getVeryEasyButton() {
+        return veryEasyButton;
     }
 
-    private void stopTimer() {
-        timer.stop();
+    public JButton getEasyButton() {
+        return easyButton;
     }
 
-    private void restartTimer() {
-        stopTimer();
-        resetTimer();
-        startTimer();
+    public JButton getNormalButton() {
+        return normalButton;
     }
 
-    private void resetTimer() {
-        seconds = 0;
-        updateTimerLabel();
+    public JButton getHardButton() {
+        return hardButton;
     }
 
-    private void updateTimerLabel() {
-        int minutes = seconds / 60;
-        int remainingSeconds = seconds % 60;
-        timerLabel.setText(String.format("%02d:%02d", minutes, remainingSeconds));
+    public JButton getRestartButton() {
+        return restartButton;
+    }
+
+    public JButton getClearAllButton() {
+        return clearAllButton;
+    }
+
+    public Timer getTimer() {
+        return timer;
+    }
+
+    public JLabel getTimerLabel() {
+        return timerLabel;
+    }
+
+    public void setTimer(Timer timer) {
+        this.timer = timer;
     }
 }
 

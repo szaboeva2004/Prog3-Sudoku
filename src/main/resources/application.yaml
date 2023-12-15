@@ -1,0 +1,14 @@
+jpa:
+  show-sql: true # wird SQL-Anweisungen loggen
+  generate-ddl: true # wird Schema und Tabellen beim App-Start erledigen
+  hibernate:
+    ddl-auto: create # wird immer neue DB-Schema herstellen
+  database-platform: org.hibernate.dialect.H2Dialect # SQL Dialekt, optional
+  defer-datasource-initialization: true # data.sql in dem richtigen Zeitpunkt zu dem DB senden und verwenden.
+sql:
+  init:
+    mode: always # initialisiert ein embedded DB, es ist gut für jetzt
+h2: # um H2-Console zu erreichen
+  console:
+    enabled: true
+    path: /h2-console # an diesem URL wird man H2-Konsole erreichen (Bsp:localhost:8080/h2-console)

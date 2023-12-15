@@ -25,7 +25,7 @@ public class MainFrame extends JFrame {
         gbc.gridy = 0;
         add(new MainPanel(), gbc);
 
-        ImageIcon icon = new ImageIcon("C:\\susu\\!BME_files\\!Targyak\\3_felev\\Prog3\\SzaboEvaMaria_GHA\\src\\main\\resources\\sudoku_icon.png");
+        ImageIcon icon = new ImageIcon("C:\\repos\\Prog3-Sudoku\\src\\main\\resources\\sudoku_icon.png");
 
         setIconImage(icon.getImage());
 
